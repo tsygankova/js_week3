@@ -65,13 +65,19 @@ return total;
 },
 
 increaseQuantity (productName) {
-    console.table (this.items);
 for (const item in this.items){
     if (item.name === productName){
         item.quantity += 1;
-        console.table (this.items);
     }
 }
+},
+
+decreaseQuantity (productName){
+    for (let i = 0; i < this.items.length; i +=1){
+        if (this.items[i].name === productName){
+            this.items[i].quantity > 1 ? this.items[i].quantity -=1 : this.items.splice (i,1);
+        }
+    }
 }
 
 
@@ -92,5 +98,12 @@ console.table (cart.getItems());
 console.log ('total price is', cart.countTotalPrice())
 
 cart.increaseQuantity ('🎃')
+console.table (cart.getItems());
+
+cart.decreaseQuantity ('🎃')
+console.table (cart.getItems());
+
+cart.decreaseQuantity ('🎃')
+console.table (cart.getItems());
 
 
