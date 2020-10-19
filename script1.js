@@ -12,39 +12,24 @@ decreaseQuantity(productName)
 {name: 'cherry', price: 60}
 {name: 'cranberry', price: 110}
 */
-const pumpkin = {name: 'pumpkin', price: 50}
-const strawberry = {name: 'strawberry', price: 70}
-const cherry = {name: 'cherry', price: 60}
-const cranberry = {name: 'cranberry', price: 110}
+
+const pumpkin = {name: '🎃', price: 50};
+const strawberry = {name: '🍓', price: 70};
+const cherry = {name: '🍒', price: 60};
+const cranberry  = {name: '🤩', price: 110};
 
 const cart = {
 items: [],
-getItems(){
-    return this.items;
-},
 
 add (product){
+for (const item in this.items){
     product.quantity = 1;
-    this.items.push (product);
-    console.table (product);
+    if (item.name === product.name){
+        console.log ('такой продукт уже есть, увеличиваем количество!')
+        product.quantity +=1;
+    } this.items.push (product);
+    console.log (this.items)}
 },
-
-remove (productName){
-    console.log (productName);
-    for (const item of this.items) {
-   console.log (item);
-   if (productName === item.name){
-       console.log ('Finally found!')
-   }
-    }
 }
 
-}
-
-cart.add (strawberry);
-cart.add (pumpkin);
-cart.add (cherry);
-cart.add (cranberry);
-
-cart.remove ('pumpkin');
-
+console.log (cart.add ({name: '🎃', price: 50}));
