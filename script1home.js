@@ -32,6 +32,4 @@ const key = entry[0];
 const value = entry [1];
 message += `${key}: ${value} \n`}
 
-   
- 
 console.log(message) 
