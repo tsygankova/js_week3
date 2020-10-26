@@ -9,8 +9,8 @@
 const findBestEmployee = function (employees) {
     'use strict';
     // Write code under this line
-    let bestEmployee = Object.keys (employees)[0] = " ";
-    let bestResult = Object.values (employees)[1] = " ";
+    let bestEmployee = Object.keys (employees)[0] = "";
+    let bestResult = Object.values (employees)[1] = "";
     for (let [employee, result] of Object.entries (employees)){
         if (result > bestResult){
             bestResult = result;
